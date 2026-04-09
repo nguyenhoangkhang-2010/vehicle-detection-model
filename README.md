@@ -134,6 +134,59 @@ git add .
 git commit -m "your message"
 git push origin feature/your-feature
 ```
+---
+
+## 🌿 Git Workflow (Team Collaboration)
+
+> ⚠️ **Important:** Do NOT push directly to the `main` branch.
+
+### 🔹 Working with branches
+
+1. Pull latest code:
+
+```
+git pull origin main
+```
+
+2. Create a new branch:
+
+```
+git checkout -b feature/your-feature-name
+```
+
+3. Make changes and commit:
+
+```
+git add .
+git commit -m "feat: your feature description"
+```
+
+4. Push your branch:
+
+```
+git push origin feature/your-feature-name
+```
+
+5. Create a Pull Request on GitHub to merge into `main`
+
+---
+
+### 📌 Rules
+
+* ❌ Do NOT push directly to `main`
+* ✅ Always create a new branch
+* ✅ Use clear commit messages (`feat`, `fix`, `update`, ...)
+* ✅ Review code before merging
+
+---
+
+### 🧠 Example branch names
+
+* `feature/vehicle-detection`
+* `feature/tracking-system`
+* `feature/counting-module`
+* `fix/detection-bug`
+* `update/readme`
 
 ---
 
