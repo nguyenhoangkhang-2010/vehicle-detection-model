@@ -12,7 +12,7 @@ def extract_frames_from_videos(video_folder, output_folder, total_images_needed=
     images_per_video = total_images_needed // len(video_paths)
     count = 0
 
-    print(f"Bắt đầu trích xuất {total_images_needed} ảnh từ {len(video_paths)} video...")
+    print(f"🚀 Bắt đầu trích xuất {total_images_needed} ảnh từ {len(video_paths)} video...")
 
     for vid_path in video_paths:
         cap = cv2.VideoCapture(vid_path)
@@ -36,7 +36,7 @@ def extract_frames_from_videos(video_folder, output_folder, total_images_needed=
             frame_id += 1
         cap.release()
 
-    print(f"Hoàn tất! Đã lưu {count} ảnh vào {output_folder}")
+    print(f"✅ Hoàn tất! Đã lưu {count} ảnh vào {output_folder}")
 
 if __name__ == "__main__":
     CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
