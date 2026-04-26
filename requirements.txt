@@ -9,3 +9,6 @@ torchvision
 deep-sort-realtime
 filterpy
 lap
+pillow
+seaborn
+roboflow

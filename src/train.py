@@ -1,16 +1,27 @@
 from ultralytics import YOLO
-import os
+"""Main train model"""
+"""
+def train():
+    model = YOLO("yolo26n.pt") 
 
-model = YOLO("yolo12n.pt")
-
-model.train(
-    data="data.yaml", 
-    epochs = 100, 
-    imgsz = 640, 
-    name= 'trafficv1',
-    batch= 16,
-    patience= 20,
-    device = 0
+    model.train(
+        data="data/processed/data.yaml", 
+        epochs=100,                    
+        imgsz=640,                   
+        device='cpu',    
+        project="outputs",  
+        name="vehicle_detection_v1" 
     )
 
-results = model("path/processed", save= True,  conf= 0.25)
+if __name__ == "__main__":
+    train()
+"""
+
+"""Train tiếp các epoch"""
+def resume_train():
+    model = YOLO("runs/detect/outputs/vehicle_detection_v1/weights/last.pt")
+
+    model.train(resume=True)
+
+if __name__ == "__main__":
+    resume_train()
