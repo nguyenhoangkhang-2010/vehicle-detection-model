@@ -57,24 +57,17 @@ git clone <your-repo-link>
 cd vehicle-detection-project
 ```
 
-### 2. Create virtual environment
+### 2. Create virtual Anaconda
 
 ```
-python -m venv venv
+# Tạo môi trường mới với Python 3.12
+conda create -n deep_learning python=3.12
 ```
 
 Activate:
 
-* Windows:
-
 ```
-venv\Scripts\activate
-```
-
-* Linux/Mac:
-
-```
-source venv/bin/activate
+conda activate deep_learning
 ```
 
 ### 3. Install dependencies
@@ -138,7 +131,7 @@ git push origin feature/your-feature
 
 ## 🌿 Git Workflow (Team Collaboration)
 
-> ⚠️ **Important:** Do NOT push directly to the `main` branch.
+> ⚠️ **Important:** Do NOT push directly to the `main` branch. **(But the team leader can)**
 
 ### 🔹 Working with branches
 
