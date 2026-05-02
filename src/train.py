@@ -17,7 +17,7 @@ if __name__ == "__main__":
     train()
 """
 
-"""Train tiếp các epoch"""
+"""Train tiếp các epoch
 def resume_train():
     model = YOLO("runs/detect/outputs/vehicle_detection_v1/weights/last.pt")
 
@@ -25,3 +25,9 @@ def resume_train():
 
 if __name__ == "__main__":
     resume_train()
+    """
+    
+#Load lại model đã train và test thử trên Anaconda
+model = YOLO('runs/detect/outputs/vehicle_detection_v1/weights/best.pt') 
+
+results = model('test.jpg', save=True, show=True)
