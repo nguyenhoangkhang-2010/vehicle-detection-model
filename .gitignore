@@ -18,9 +18,8 @@ models/*.onnx
 models/*.engine
 models/*.pb
 
-outputs/images/**/*
-outputs/videos/**/*
-outputs/logs/**/*
+outputs/vehicle_detection_v1/
+results/predict/
 runs/
 
 !outputs/**/.gitkeep
