@@ -1,6 +1,9 @@
 from ultralytics import YOLO
+from pathlib import Path
 """Main train model"""
-"""
+
+ROOT = Path(__file__).resolve().parent
+
 def train():
     model = YOLO("yolo26n.pt") 
 
@@ -9,13 +12,13 @@ def train():
         epochs=100,                    
         imgsz=640,                   
         device='cpu',    
-        project=r"D:\vehicle-identification-model\outputs",  
-        name="vehicle_detection_v1" 
+        project=str(ROOT / "outputs"), 
+        name="vehicle_detection_v1"
     )
 
 if __name__ == "__main__":
     train()
-"""
+
 
 """Train tiếp các epoch
 def resume_train():
