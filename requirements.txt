@@ -12,3 +12,4 @@ lap
 pillow
 seaborn
 roboflow
+ipykernel

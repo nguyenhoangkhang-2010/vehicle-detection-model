@@ -2,7 +2,7 @@ import numpy as np
 
 def check_intersection(A, B, C, D):
     def ccw(p1, p2, p3):
-        return (p3[1] - p1[1]) * (p2[0] - p1[0]) > (p2[1] - p1[1]) * (p2[0] - p1[0])
+        return (p3[1] - p1[1]) * (p2[0] - p1[0]) > (p2[1] - p1[1]) * (p3[0] - p1[0])
     return ccw(A, C, D) != ccw(B, C, D) and ccw (A, B, C) != ccw(A, B, D)
 
 def get_direction(line_start, line_end, track_start, track_end):
