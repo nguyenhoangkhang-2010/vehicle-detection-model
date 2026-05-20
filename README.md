@@ -1,6 +1,6 @@
-# 🚗 Vehicle Detection & Traffic Counting System
+# Vehicle Detection & Traffic Counting System
 
-## 📌 Introduction
+## Introduction
 
 This project focuses on building a **Deep Learning model** to:
 
@@ -16,7 +16,7 @@ The system is designed for real-world applications such as:
 
 ---
 
-## 🧠 Technologies Used
+## Technologies Used
 
 * YOLO (Ultralytics)
 * Python
@@ -26,7 +26,7 @@ The system is designed for real-world applications such as:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 .
@@ -48,7 +48,7 @@ The system is designed for real-world applications such as:
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ### 1. Clone repository
 
@@ -78,7 +78,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Usage
+## Usage
 
 ### Run detection & counting
 
@@ -94,17 +94,17 @@ python src/train.py
 
 ---
 
-## 📊 Features
+## Features
 
-* 🚗 Vehicle detection using YOLO
-* 🎯 Object tracking (avoid duplicate counting)
-* 🔢 Traffic counting system
-* 📹 Video processing with real-time visualization
-* 📈 Traffic analysis (optional)
+* Vehicle detection using YOLO
+* Object tracking (avoid duplicate counting)
+* Traffic counting system
+* Video processing with real-time visualization
+* Traffic analysis (optional)
 
 ---
 
-## 📁 Dataset
+## Dataset
 
 * Dataset is **not included** in this repository
 * You can:
@@ -114,7 +114,7 @@ python src/train.py
 
 ---
 
-## 🤝 Team Workflow
+## Team Workflow
 
 1. Clone the project
 2. Create your own branch
@@ -129,11 +129,11 @@ git push origin feature/your-feature
 ```
 ---
 
-## 🌿 Git Workflow (Team Collaboration)
+## Git Workflow (Team Collaboration)
 
-> ⚠️ **Important:** Do NOT push directly to the `main` branch. **(But the team leader can)**
+> **Important:** Do NOT push directly to the `main` branch. **(But the team leader can)**
 
-### 🔹 Working with branches
+### Working with branches
 
 1. Pull latest code:
 
@@ -164,16 +164,16 @@ git push origin feature/your-feature-name
 
 ---
 
-### 📌 Rules
+### Rules
 
-* ❌ Do NOT push directly to `main`
-* ✅ Always create a new branch
-* ✅ Use clear commit messages (`feat`, `fix`, `update`, ...)
-* ✅ Review code before merging
+* Do NOT push directly to `main`
+* Always create a new branch
+* Use clear commit messages (`feat`, `fix`, `update`, ...)
+* Review code before merging
 
 ---
 
-### 🧠 Example branch names
+### Example branch names
 
 * `feature/vehicle-detection`
 * `feature/tracking-system`
@@ -183,7 +183,7 @@ git push origin feature/your-feature-name
 
 ---
 
-## ⚠️ Notes
+## Notes
 
 * Do NOT upload large files such as:
 
@@ -197,7 +197,7 @@ git push origin feature/your-feature-name
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
 * Real-time traffic dashboard
 * Heatmap visualization
@@ -206,6 +206,6 @@ git push origin feature/your-feature-name
 
 ---
 
-## 📧 Contact
+## Contact
 
-Project developed for Deep Learning course.
+Project developed for Hoang Khang (Leader) and members: Nha Phuong & Bao Khang
