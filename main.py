@@ -1,4 +1,3 @@
-# main.py
 import cv2
 import os
 import argparse
@@ -52,7 +51,7 @@ class ImageTrafficProcessor(MediaProcessor):
             y_pos += 25
 
         base_name = os.path.basename(self.input_path)
-        output_path = f"results/result_{base_name}"
+        output_path = f"results/img/result_{base_name}"
         cv2.imwrite(output_path, frame)
         print(f"Đã lưu ảnh kết quả tại: {output_path}")
         
@@ -63,8 +62,8 @@ class ImageTrafficProcessor(MediaProcessor):
         report_data = [{"Analysis_Time": timestamp, "Source_Image": self.input_path, "Vehicle_Type": k, "Total_Detected": v} 
                        for k, v in self.image_counts.items()]
         df_img = pd.DataFrame(report_data)
-        df_img.to_csv("results/image_density_report.csv", index=False, encoding='utf-8-sig')
-        print(f"Đã cập nhật báo cáo mật độ ảnh tại: results/image_density_report.csv\n")
+        df_img.to_csv("results/img/image_density_report.csv", index=False, encoding='utf-8-sig')
+        print(f"Đã cập nhật báo cáo mật độ ảnh tại: results/img/image_density_report.csv\n")
         print(df_img.to_string(index=False))
 
 
@@ -86,7 +85,7 @@ class VideoTrafficProcessor(MediaProcessor):
         fps = int(cap.get(cv2.CAP_PROP_FPS)) if cap.get(cv2.CAP_PROP_FPS) > 0 else 30
         
         base_name = os.path.basename(self.input_path)
-        output_path = f"results/result_{base_name}"
+        output_path = f"results/video/result_{base_name}"
         
         fourcc = cv2.VideoWriter_fourcc(*'mp4v')
         out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
@@ -126,7 +125,7 @@ class VideoTrafficProcessor(MediaProcessor):
 
         cap.release()
         out.release()
-        print(f"💾 Đã lưu video kết quả tại: {output_path}")
+        print(f"Đã lưu video kết quả tại: {output_path}")
         self._generate_analytics()
 
     def _generate_analytics(self) -> None:
@@ -134,8 +133,8 @@ class VideoTrafficProcessor(MediaProcessor):
             df_raw = pd.DataFrame(self.analyzer.log_database)
             df_raw.to_csv(REPORT_OUTPUT, index=False, encoding='utf-8-sig')
             frequency_df = df_raw.groupby(['Time_Slot', 'Vehicle_Type']).size().unstack(fill_value=0)
-            frequency_df.to_csv("results/traffic_density_analysis.csv", encoding='utf-8-sig')
-            print("Báo cáo tần suất lưu thông video đã được cập nhật tại thư mục results/.")
+            frequency_df.to_csv("results/video/traffic_density_analysis.csv", encoding='utf-8-sig')
+            print("Báo cáo tần suất lưu thông video đã được cập nhật tại thư mục results/video/.")
 class TrafficMonitorSystem:
     def __init__(self):
         self.detector = YOLODetector(MODEL_PATH, imgsz=IMG_SIZE, conf_threshold=CONF_THRESHOLD)
