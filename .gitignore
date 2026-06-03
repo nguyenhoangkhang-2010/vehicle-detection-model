@@ -22,6 +22,8 @@ outputs/vehicle_detection_v1/
 results/predict/
 results/chart/
 results/video/
+results/img
+results/
 runs/
 
 !outputs/**/.gitkeep
