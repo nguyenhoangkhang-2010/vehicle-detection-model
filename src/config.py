@@ -1,6 +1,6 @@
 import os
 
-MODEL_PATH = "yolo26n.pt"
+MODEL_PATH = "outputs/vehicle_detection_v1/weights/best.pt"
 VIDEO_INPUT = "data/raw/video-data-vehicles/"
 VIDEO_OUTPUT = "results/video/result_traffic.mp4"
 REPORT_OUTPUT = "results/traffic_frequency_report.csv"
@@ -17,7 +17,7 @@ LINE_END = (1180, 500)
 
 TIME_WINDOW_SECONDS = 60
 
-CLASS_NAME = {
+CLASS_NAMES = {
     0: 'bike',
     1: 'bus',
     2: 'car',
