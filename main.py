@@ -39,9 +39,11 @@ class ImageTrafficProcessor(MediaProcessor):
             x, y, w, h = box_data
             x1, y1, x2, y2 = x, y, x + w, y + h
             
-            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 255), 2)
+            color = CLASS_COLORS.get(cls_id, (255,255,255))
+            
+            cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
             cv2.putText(frame, f"{class_name} {conf:.2f}", (x1, y1 - 8),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 2)
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
         cv2.rectangle(frame, (15, 15), (320, 180), (0, 0, 0), -1)
         cv2.putText(frame, "STATIC DENSITY ANALYSIS", (25, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
@@ -109,10 +111,12 @@ class VideoTrafficProcessor(MediaProcessor):
                 self.analyzer.analyze_flow(track, frame_id, fps)
                 
                 x1, y1, x2, y2 = map(int, track.to_ltrb())
-                class_name = CLASS_NAMES[track.get_det_class()]
-                cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                cls_id = int(track.get_det_class())
+                class_name = CLASS_NAMES[cls_id]
+                color = CLASS_COLORS.get(cls_id, (255, 255, 255))
+                cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
                 cv2.putText(frame, f"{class_name} #{track.track_id}", (x1, y1 - 8),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
             cv2.rectangle(frame, (15, 15), (320, 180), (0, 0, 0), -1)
             cv2.putText(frame, "TRAFFIC MONITOR SYSTEM", (25, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
