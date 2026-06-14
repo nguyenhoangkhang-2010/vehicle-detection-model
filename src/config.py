@@ -1,6 +1,6 @@
 import os
 
-MODEL_PATH = "outputs/vehicle_detection_v1/weights/best.pt"
+MODEL_PATH = "outputs/vehicle_detection_v4/best.pt"
 VIDEO_INPUT = "data/raw/video-data-vehicles/"
 VIDEO_OUTPUT = "results/video/"
 IMG_INPUT = "data/raw/img-data-vehicles/"

@@ -41,7 +41,7 @@ class ImageTrafficProcessor(MediaProcessor):
             
             color = CLASS_COLORS.get(cls_id, (255,255,255))
             
-            cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
+            cv2.rectangle(frame, (0, 0), (200, 120), (0, 0, 0), -1)
             cv2.putText(frame, f"{class_name} {conf:.2f}", (x1, y1 - 8),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
